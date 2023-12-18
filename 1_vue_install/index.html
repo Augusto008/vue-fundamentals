@@ -9,10 +9,13 @@
 </head>
 <body>
     <div id="app">
-        <p>
-            Hello world!<br>
-            My name isn't {{ user_1.name }} and I'm {{user_1.age}} years old.
-        </p>
+        <form id="add-form" action="">
+            <input type="text" v-model="input.name" placeholder="Type your name: ">
+            <input type="submit" value="Send" v-on:click="submitForm">
+        </form>
+        <p>Hello world!</p>
+        <p>My name isn't {{ user_1.name }} and I'm {{user_1.age}} years old.</p>
+        <p>Data binding: {{ input.name }}</p>
     </div>
 </body>
 </html>
