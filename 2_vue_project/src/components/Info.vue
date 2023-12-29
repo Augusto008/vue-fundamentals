@@ -10,6 +10,7 @@
       <li>PHP</li>
       <li>Python</li>
     </ul>
+    <button @click="showEmailOpt">{{buttonText}}</button>
     <p v-show="showEmail">Send a message to: {{emailAddress}}</p>
   </div>
 </template>
@@ -20,8 +21,19 @@
       return {
         working: false,
         showEmail: false,
-        emailAddress: "aquila.real0@gmail.com"
+        emailAddress: "aquila.real0@gmail.com",
+        buttonText: "Show Email"
       }
     },
+    methods: {
+      showEmailOpt() {
+        this.showEmail = !this.showEmail
+        if(!this.showEmail) {
+          this.buttonText = "Show Email"
+        } else {
+          this.buttonText = "Hide Email"
+        }
+      }
+    }
   }
 </script>
