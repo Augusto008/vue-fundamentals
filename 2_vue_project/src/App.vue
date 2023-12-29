@@ -1,5 +1,6 @@
 <template>
   <div>
+    <HeaderLinks />
     <FirstComponent />
     <LifeCycle />
     <Person />
@@ -12,6 +13,7 @@
 <script>
 
   import FirstComponent from './components/FirstComponent.vue';
+  import HeaderLinks from './components/HeaderLinks.vue';
   import LifeCycle from './components/LifeCycle.vue';
   import Person from './components/Person.vue';
   import ActionButton from './components/forms/elements/ActionButton.vue';
@@ -21,6 +23,7 @@
     components: {
       ActionButton,
       FirstComponent,
+      HeaderLinks,
       LifeCycle,
       Person
     }
