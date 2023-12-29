@@ -21,14 +21,20 @@ export default {
   },
   methods: {
     buttonFunction() {
-      alert("Button Clicked");
+      console.log("Button Clicked");
     },
     buttonActive() {
-      alert("Activated");
+      console.log("Activated");
       this.$refs.btn.setAttribute('active', 'true')
     },
     buttonMouseover() {
-      this.$refs.btn.setAttribute('style', 'background-color: gray; color: white;');
+      if (this.$refs.btn.hasAttribute('style')) {
+        console.log('remove style')
+        this.$refs.btn.removeAttribute('style');
+      } else {
+        console.log('add style')
+        this.$refs.btn.setAttribute('style', 'background-color: gray; color: white;');
+      }
     }
   }
 };
