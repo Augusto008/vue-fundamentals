@@ -4,11 +4,11 @@
     <p v-else>I'm not working at the moment:</p>
     <p>I use these languages:</p>
     <ul>
-      <li>C</li>
-      <li>Java</li>
-      <li>JavaScript</li>
-      <li>PHP</li>
-      <li>Python</li>
+      <li v-for="(technology, index) in technologies" v-bind:key="index">{{technology}}</li>
+    </ul>
+    <p>And I'm use these frameworks too:</p>
+    <ul>
+      <li v-for="framework in frameworks" :key="framework.id">{{framework.framework}}</li>
     </ul>
     <button @click="showEmailOpt">{{buttonText}}</button>
     <p v-show="showEmail">Send a message to: {{emailAddress}}</p>
@@ -22,7 +22,14 @@
         working: false,
         showEmail: false,
         emailAddress: "aquila.real0@gmail.com",
-        buttonText: "Show Email"
+        buttonText: "Show Email",
+        technologies: ['C', 'JavaScript', 'PHP', 'Python'],
+        frameworks: [
+          {id: 1, framework: 'Laravel'},
+          {id: 2, framework: 'Bootstrap'},
+          {id: 3, framework: 'Node.js'},
+          {id: 4, framework: 'Vue.js'}
+        ]
       }
     },
     methods: {
