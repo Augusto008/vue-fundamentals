@@ -10,11 +10,15 @@
     <ul>
       <li v-for="framework in frameworks" :key="framework.id">{{framework.framework}}</li>
     </ul>
-    <button @click="showEmailOpt">{{buttonText}}</button>
+    <button @click="showEmailOpt" type="button">{{buttonText}}</button>
     <p v-show="showEmail">Send a message to: {{emailAddress}}</p>
+    <Form1 action="action" method="POST"/>
+    
   </div>
 </template>
 <script>
+  import Input from './forms/elements/Input.vue'
+  import Form1 from './forms/templates/Form1.vue'
   export default {
     name: 'Info',
     data() {
@@ -31,6 +35,10 @@
           {id: 4, framework: 'Vue.js'}
         ]
       }
+    },
+    components: {
+      Form1,
+      Input
     },
     methods: {
       showEmailOpt() {
