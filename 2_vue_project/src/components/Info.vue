@@ -2,6 +2,10 @@
   <div>
     <p v-if="working">I'm working at the moment:</p>
     <p v-else>I'm not working at the moment:</p>
+    <Reuse />
+    <Reuse />
+    <Reuse />
+    <Reuse />
     <p>I use these languages:</p>
     <ul>
       <li v-for="(technology, index) in technologies" v-bind:key="index">{{technology}}</li>
@@ -17,6 +21,7 @@
   </div>
 </template>
 <script>
+  import Reuse from './Reuse.vue'
   import Input from './forms/elements/Input.vue'
   import Form1 from './forms/templates/Form1.vue'
   export default {
@@ -38,7 +43,8 @@
     },
     components: {
       Form1,
-      Input
+      Input,
+      Reuse
     },
     methods: {
       showEmailOpt() {
